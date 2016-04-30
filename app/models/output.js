@@ -13,11 +13,7 @@ var Output = new mongoose.Schema({
 	type: {
 		type: String,
 		required: true
-	},
-	number: { 
-		type: Number, 
-		required: true
-	}	
+	}
 });
 
 module.exports = mongoose.model('versions', Output);
