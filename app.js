@@ -5,12 +5,14 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
-var meth = require('/app/models/methData.js');
-var ambulance = require('/app/models/AmbulanceData.js');
-var output = require('/app/models/output.js');
-var distinction = require('/app/models/distinctions.js');
+//var meth = require('./app/models/methData.js');
+//var ambulance = require('./app/models/AmbulanceData.js');
+var output = require('./app/models/output.js');
+//var distinction = require('./app/models/distinctions.js');
 
 mongoose.connect('mongodb://localhost/iot');
+
+//var versions = mongoose.model("versions");
 
 var PORT = 80;
 app.use(express.static(__dirname + '/public'));
