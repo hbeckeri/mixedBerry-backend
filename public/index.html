@@ -7,8 +7,10 @@
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 	</head>
 <body>
+	<!--NavBar Start-->
 	<div class="navbar navbar-default" role="navigation">
-    	<div class="container-fluid">
+	   	<div class="container-fluid">
+	   		<ul class="nav navbar-nav">
         	<div class="dropdown">
   				<ul class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     				Maps
@@ -16,20 +18,32 @@
   				</ul>
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 				    <li><a href="#" data-toggle="modal" data-target="#county">County</a></li>
-				    <li><a href="#">City</a></li>
-				    <li><a href="#">Date/Time</a></li>
-				    <li><a href="#">Type of Crime</a></li>
+				    <li><a href="#" data-toggle="modal" data-target="#city">City</a></li>
+				    <li><a href="#" data-toggle="modal" data-target="#date-time">Date/Time</a></li>
+				    <li><a href="#" data-toggle="modal" data-target="#type-crime">Type of Crime</a></li>
 				    <li role="separator" class="divider"></li>
 				    <li><a href="#">Graphs</a></li>
 				  </ul>
 			</div>
+			</ul>
+			<div class="navbar-header">
+      			<ul class="">CrimeCast</ul>
+    		</div>
     	</div>
     </div>
-	<!-- Modal -->
+    <!--NavBar End-->
+    
+    <!--Map Div-->
+    <div>
+    	<img src="assets/img/indy.jpg" alt="Image Placeholder" height=100% width=100% />
+    </div>
+    <!--End Map Div-->
+	
+	<!-- Modal for County-->
   	<div class="modal fade" id="county" role="dialog">
     	<div class="modal-dialog">
     
-    <!-- Modal content for county-->
+    <!-- Modal Content for County-->
     	<div class="modal-content">
         	<div class="modal-header">
           		<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -44,14 +58,95 @@
 
         </div>
         <div class="modal-footer">
+        	<button type="button" class="btn btn-default">Submit</button>
         	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       	</div>
       
     	</div>
 	</div>
+	<!--End of Modal-->
 	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- Modal for City-->
+  	<div class="modal fade" id="city" role="dialog">
+    	<div class="modal-dialog">
+    
+    <!-- Modal Content for City-->
+    	<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title text-center">City</h4>
+        	</div>
+        <div class="modal-body">
+        	<form action="">
+			  <input type="text" name="city" value="Please enter city" />
+			</form>
+
+        </div>
+        <div class="modal-footer">
+        	<button type="button" class="btn btn-default">Submit</button>
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      	</div>
+      
+    	</div>
+	</div>
+	<!--End of Modal-->
+	
+	<!-- Modal for Date/Time-->
+  	<div class="modal fade" id="date-time" role="dialog">
+    	<div class="modal-dialog">
+    
+    <!-- Modal Content for City-->
+    	<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title text-center">Date/Time</h4>
+        	</div>
+        <div class="modal-body">
+        	<form action="">
+			  <input type="text" name="city" value="Please enter city" />
+			</form>
+
+        </div>
+        <div class="modal-footer">
+        	<button type="button" class="btn btn-default">Submit</button>
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      	</div>
+      
+    	</div>
+	</div>
+	<!--End of Modal-->
+	
+	<!-- Modal for Type of Crime-->
+  	<div class="modal fade" id="type-crime" role="dialog">
+    	<div class="modal-dialog">
+    
+    <!-- Modal Content for City-->
+    	<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title text-center">Type of Crime</h4>
+        	</div>
+        <div class="modal-body">
+        	<form action="">
+			  <input type="text" name="city" value="Please enter city" />
+			</form>
+
+        </div>
+        <div class="modal-footer">
+        	<button type="button" class="btn btn-default">Submit</button>
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      	</div>
+      
+    	</div>
+	</div>
+	<!--End of Modal-->
+	
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

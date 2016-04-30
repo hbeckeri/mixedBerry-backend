@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/iot');
 
 //var versions = mongoose.model("versions");
 
-var PORT = 80;
+var PORT = process.env.PORT;
 app.use(express.static(__dirname + '/public'));
 
 app.listen(PORT, function () {
