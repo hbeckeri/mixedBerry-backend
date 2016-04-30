@@ -32,4 +32,4 @@ var methData = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('MethData', methData);
+module.exports = mongoose.model('meth', methData);
