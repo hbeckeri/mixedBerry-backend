@@ -1,3 +1,13 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
 }
+#map {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+.map-wrapper {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+}

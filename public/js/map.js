@@ -5,7 +5,6 @@ console.log('here');
 
 $.get('http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com/distinction', function (doc) {
     heatmapData = doc;
-    console.log(doc.length);
     var array = [];
 
     for(var i = 0; i < doc.length; i++) {
