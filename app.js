@@ -14,3 +14,8 @@ app.listen(PORT, function () {
 app.get('/', function(req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
+
+app.get('/data', function(req, res){
+    //query mongo
+    //return data
+});
