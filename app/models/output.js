@@ -20,4 +20,4 @@ var Output = new mongoose.Schema({
 	}	
 });
 
-module.exports = mongoose.model('Output', Output);
+module.exports = mongoose.model('versions', Output);
