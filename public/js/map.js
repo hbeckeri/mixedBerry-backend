@@ -5,7 +5,7 @@ console.log('here');
 var url = 'http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com';
 
 $.get(url + '/grid', function (doc) {
-    $.get(url + '/gridData', function(doc){
+    $.get(url + '/gridData', function(dataDoc){
         heatmapData = doc;
         var array = [];
 
