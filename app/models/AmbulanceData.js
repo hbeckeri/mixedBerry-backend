@@ -24,4 +24,4 @@ var AmbulanceData = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('ambulancedatas', AmbulanceData);
+module.exports = mongoose.model('ambulancedatas2', AmbulanceData);
