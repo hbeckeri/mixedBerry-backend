@@ -9,7 +9,6 @@ html, body {
     height: 93%;
 }
 .map-wrapper {
-    background-color: red;
     height: 100%;
     width: 100%;
 }
@@ -75,7 +74,7 @@ Bootstrap Card
     top: 85%;
     left: 32%;
     z-index: 5;
-    background-color: #fff;
+    background-color: #3943A2;
     padding: 5px;
     border: 1px solid #999;
     text-align: center;
@@ -83,10 +82,15 @@ Bootstrap Card
     padding-left: 10px;
     border: 0px;
     box-shadow: 5px 5px 5px #888;
+    color:#fff;
 }
 
-.cardLink{
-    height: 100%;
-    box-shadow: 5px 5px 5px #888;
+.cardLink {
+    height: 50%;
+    margin-top: 8px;
+    color:#fff;
+}
+.cardLink:hover {
+    color:ff8e36;
 }
 
