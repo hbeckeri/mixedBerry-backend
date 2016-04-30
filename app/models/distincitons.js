@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 
-var Distinctions = new mongoose.Schema({
+var Dist = new mongoose.Schema({
 	index: {
 		type: Number,
 		required: true
@@ -24,4 +24,4 @@ var Distinctions = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('asdf', Distinctions);
+module.exports = mongoose.model('distinction', Dist);
