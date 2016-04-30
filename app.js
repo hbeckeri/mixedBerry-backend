@@ -55,6 +55,6 @@ app.get('/meth', function(req, res) {
 app.get('/light', function(req, res){
     var data = req.query.data;
     io.emit('hi', {data: data}, 'everyone');
-    res.send('OK');
+    res.send({success: 'OK'});
     console.log('Got data ' + data);
 });
