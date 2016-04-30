@@ -27,14 +27,12 @@ app.get('/', function (req, res) {
 
 app.get('/ambulance', function (req, res) {
     ambulance.find({}, function (err, docs) {
-        console.log(docs);
         res.send(docs);
     });
 });
 
 app.get('/distiction', function(req, res){
     distinction.find({}, function (err, docs) {
-        console.log(docs);
         res.send(docs);
     });
 });
