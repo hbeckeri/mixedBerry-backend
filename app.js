@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 //var meth = require('./app/models/methData.js');
 //var ambulance = require('./app/models/AmbulanceData.js');
 var ambulance = require('./app/models/output.js');
-var distinction = require('./app/models/distinctions.js');
+var distinction = require('./app/models/distincitons.js');
 
 mongoose.connect('mongodb://localhost/iot');
 
