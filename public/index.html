@@ -200,19 +200,19 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
     var socket = io();
-    var marker;
+    var marker = null;
     socket.on('hi', function (data) {
 		var x = +data.data;
 		if(x < 100 && x >= 0) {
-            console.log('add');
-			marker = new google.maps.Marker({
-				position: new google.maps.LatLng(39.967354, -86.0103986),
-				map: map
-			});
-			console.log(data);
+            if (marker == null) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(39.967354, -86.0103986),
+                    map: map
+                });
+            }
 		} else {
-            console.log('remove');
             marker.setMap(null);
+            marker = null;
         }
     });
 </script>

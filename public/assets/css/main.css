@@ -103,7 +103,7 @@ Bootstrap Card
     top: 10%;
     right: 3%;
     z-index: 6;
-    background-color: #fff;
+    background-color: #3943A2;
     padding: 5px;
     border: 1px solid #999;
     text-align: center;
@@ -111,12 +111,16 @@ Bootstrap Card
     padding-left: 10px;
     border: 0px;
     box-shadow: 5px 5px 5px #888;
+    color: #fff;
 }
 
+.cardLink-vertical:hover {
+    color: #ff8e36;
+}
 
 .cardLink-vertical {
     height: 16%;
-    box-shadow: 5px 5px 5px #888;
+    /*box-shadow: 5px 5px 5px #888;*/
     /*text-align: center;*/
     vertical-align: text-bottom;
 }

@@ -150,7 +150,7 @@ function setGridByPrediction(day) {
     crimeCast.fadeIn(0);
     crimeTypes.fadeOut(0);
 
-    $('.modelTitle').text('Crime Forcast - Day: '+ crimeCastDay + ' Type: ' + crimeCastType);
+    $('.modelTitle').text('Crime Forecast - Day: '+ crimeCastDay + ' Type: ' + crimeCastType);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: sanFrancisco,
@@ -161,7 +161,7 @@ function setGridByPrediction(day) {
     for (var i =1; i < grid.length; i++) {
 
         (function(index) {
-            $.get('http://54.200.107.111:8007/iot_data/' + i + '/' + crimeCastDay , function(doc) {
+            $.get('http://54.200.107.111:8006/iot_data/' + i + '/' + crimeCastDay + '/' + crimeCastType, function(doc) {
                 var rect = new google.maps.Rectangle({
                     strokeColor: numberToColor(doc),
                     strokeOpacity: 0.8,
@@ -189,7 +189,7 @@ function setGridByPredictionType(type) {
     crimeCast.fadeIn(0);
     crimeTypes.fadeOut(0);
 
-    $('.modelTitle').text('Crime Forcast - Day: '+ crimeCastDay + ' Type: ' + crimeCastType);
+    $('.modelTitle').text('Crime Forecast - Day: '+ crimeCastDay + ' Type: ' + crimeCastType);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: sanFrancisco,
@@ -200,7 +200,7 @@ function setGridByPredictionType(type) {
     for (var i =1; i < grid.length; i++) {
 
         (function(index) {
-            $.get('http://54.200.107.111:8007/iot_data/' + i + '/' + crimeCastDay + '/' + crimeCastType , function(doc) {
+            $.get('http://54.200.107.111:8006/iot_data/' + i + '/' + crimeCastDay + '/' + crimeCastType , function(doc) {
                 var rect = new google.maps.Rectangle({
                     strokeColor: numberToColor(doc),
                     strokeOpacity: 0.8,
