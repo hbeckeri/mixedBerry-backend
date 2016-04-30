@@ -19,15 +19,15 @@ var methData = new mongoose.Schema({
 		required: true
 	},
 	fips: { 
-		type: "int", 
+		type: Number, 
 		required: true
 	},
 	latitude: { 
-		type: "double", 
+		type: Number, 
 		required: true
 	},	
 	longitude: { 
-		type: "double", 
+		type: Number, 
 		required: true
 	}
 });
