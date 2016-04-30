@@ -3,6 +3,9 @@
  */
 var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/database');
 
 var PORT = 80;
 app.use(express.static(__dirname + '/public'));

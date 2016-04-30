@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 
-var 911Data = new mongoose.Schema({
+var AmbulanceData = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true
@@ -24,4 +24,4 @@ var 911Data = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('911Data', 911Data);
+module.exports = mongoose.model('AmbulanceData', AmbulanceData);
