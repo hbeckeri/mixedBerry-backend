@@ -21,7 +21,7 @@ class Client:
         self.client.close()
 
 client2 = Client("localhost", 27017, "iot")
-collection = client2.connectDB('AmbulanceData')
+collection = client2.connectDB('ambulancedatas2')
 
 
 #911_tesambulance.xls
@@ -33,9 +33,9 @@ for row in range(sh1.nrows):
         "address": sh1.cell(rowx=row, colx=1).value,
         "city": sh1.cell(rowx=row, colx=2).value,
         "latitude": sh1.cell(rowx=row, colx=3).value,
-        "longitude": sh1.cell(rowx=row, colx=3).value
+        "longitude": sh1.cell(rowx=row, colx=4).value
     }
-    collection.insert(data)
+    #collection.insert(data)
     print(data)
 
 client2.close()
