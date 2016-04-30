@@ -5,9 +5,18 @@ body {
     height: 100px;
     width: 100px;
     background-color: red;
+    z-index: 10;
 }
 .map-wrapper {
     background-color: red;
     height: 100%;
     width: 100%;
+}
+
+.forcast {
+    width: 100px;
+    height: 50px;
+    position: fixed;
+    background-color: white;
+    z-index: 1000;
 }

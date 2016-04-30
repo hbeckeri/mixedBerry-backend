@@ -113,4 +113,38 @@ function setMethPins() {
 }
 
 
+function setGridByPrediction(day) {
+    $('.modelTitle').text('5 Day Crime Forcast');
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: sanFrancisco,
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    for (var i =1; i < grid.length; i++) {
+
+        (function(index) {
+            $.get('http://54.200.107.111:8007/iot_data/' + i + '/' + day , function(doc) {
+                var rect = new google.maps.Rectangle({
+                    strokeColor: numberToColor(doc),
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: numberToColor(doc),
+                    fillOpacity: 0.35,
+                    map: map,
+                    bounds: {
+                        north: grid[index].latitude1,
+                        south: grid[index].latitude2,
+                        east: grid[index].longitude1,
+                        west: grid[index].longitude2
+                    }
+                });
+            });
+        })(i)
+
+    }
+}
+
+
 
