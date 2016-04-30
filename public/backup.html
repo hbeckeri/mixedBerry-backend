@@ -2,9 +2,23 @@
 <head>
     <meta charset="utf-8">
     <title>CrimeCast</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/bs-main-menu.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link href="assets/css/main.css">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+    </style>
 
     <!-- Javascript -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
@@ -23,11 +37,11 @@
             <div class="dropdown">
                 <ul class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="true">
-                    <span class="glyphicon glyphicon-search icon-rotate icon-flipped"></span>ptions
+                    Maps
                     <span class="caret"></span>
                 </ul>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a onclick="setGrid(1)">Crime Types</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#county">Crime Types</a></li>
                     <li><a onclick="setHeatmap()">911 Calls</a></li>
                     <li><a onclick="setMethPins()">Meth Labs</a></li>
                     <li><a onclick="setGridByPrediction(1)">5 Day CrimeCast</a></li>
@@ -44,32 +58,11 @@
 <!--NavBar End-->
 
 <!--Map Div-->
-<div class="">
-    <div id="map"></div>
-    <div id="crimeTypes" class="card-container">
-        <div class="card card-block">
-            <div class="row">
-                <div class="col col-sm-1"></div>
-                <div onclick="setGrid(1)" class="col col-sm-2 cardLink">Type 1</div>
-                <div onclick="setGrid(2)" class="col col-sm-2 cardLink">Type 2</div>
-                <div onclick="setGrid(3)" class="col col-sm-2 cardLink">Type 3</div>
-                <div onclick="setGrid(4)" class="col col-sm-2 cardLink">Type 4</div>
-                <div onclick="setGrid(5)" class="col col-sm-2 cardLink">Type 5</div>
-            </div>
-        </div>
-    </div>
-    <div id="crimeCast" class="card-container">
-        <div class="card card-block">
-            <div class="col col-sm-1"></div>
-            <div onclick="setGridByPrediction(1)" class="col col-sm-2 cardLink">Day 1</div>
-            <div onclick="setGridByPrediction(2)" class="col col-sm-2 cardLink">Day 2</div>
-            <div onclick="setGridByPrediction(3)" class="col col-sm-2 cardLink">Day 3</div>
-            <div onclick="setGridByPrediction(4)" class="col col-sm-2 cardLink">Day 4</div>
-            <div onclick="setGridByPrediction(5)" class="col col-sm-2 cardLink">Day 5</div>
-        </div>
-    </div>
-
+<!--<div class="map-wrapper">-->
+<div id="map">
 </div>
+
+<div class="forcast">Hello World</div>
 
 
 <!--</div>-->
@@ -90,11 +83,11 @@
             </div>
             <div class="modal-body">
                 <form id="gridSelector">
-                    <input type="radio" name="radioName" value="1"/> Type 1 <br/>
-                    <input type="radio" name="radioName" value="2"/> Type 2 <br/>
-                    <input type="radio" name="radioName" value="3"/> Type 3 <br/>
-                    <input type="radio" name="radioName" value="4"/> Type 4 <br/>
-                    <input type="radio" name="radioName" value="5"/> Type 5 <br/>
+                    <input type="radio" name="radioName" value="1" /> Type 1 <br/>
+                    <input type="radio" name="radioName" value="2" /> Type 2 <br/>
+                    <input type="radio" name="radioName" value="3" /> Type 3 <br/>
+                    <input type="radio" name="radioName" value="4" /> Type 4 <br/>
+                    <input type="radio" name="radioName" value="5" /> Type 5 <br/>
                 </form>
 
             </div>

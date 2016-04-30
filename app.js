@@ -56,4 +56,5 @@ app.get('/light', function(req, res){
     var data = req.query.data;
     io.emit('hi', {data: data}, 'everyone');
     res.send('OK');
+    console.log('Got data ' + data.data);
 });

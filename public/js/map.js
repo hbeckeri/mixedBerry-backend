@@ -2,6 +2,12 @@ var heatmapData = [];
 var grid;
 var gridData;
 
+var crimeCast = $('#crimeCast');
+var crimeTypes = $('#crimeTypes');
+
+crimeCast.fadeOut(0);
+crimeTypes.fadeOut(0);
+
 console.log('here');
 
 var url = 'http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com';
@@ -52,8 +58,9 @@ function numberToColor(num) {
     }
 }
 
-function setGrid() {
-    var val = $('input[name=radioName]:checked', '#gridSelector').val();
+function setGrid(val) {
+    crimeCast.fadeOut(0);
+    crimeTypes.fadeIn(0);
     $('.modelTitle').text('Crime Reports: Type ' + val);
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -84,6 +91,9 @@ function setGrid() {
 }
 
 function setHeatmap() {
+    crimeCast.fadeOut(0);
+    crimeTypes.fadeOut(0);
+
     $('.modelTitle').text('911 Call Heatmap');
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -100,6 +110,9 @@ function setHeatmap() {
 }
 
 function setMethPins() {
+    crimeCast.fadeOut(0);
+    crimeTypes.fadeOut(0);
+
     $('.modelTitle').text('Meth Labs');
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -124,7 +137,10 @@ function setMethPins() {
 }
 
 function setGridByPrediction(day) {
-    $('.modelTitle').text('5 Day Crime Forcast');
+    crimeCast.fadeIn(0);
+    crimeTypes.fadeOut(0);
+
+    $('.modelTitle').text('5 Day Crime Forcast: Day '+ day);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: sanFrancisco,
