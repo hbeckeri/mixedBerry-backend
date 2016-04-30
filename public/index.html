@@ -2,22 +2,12 @@
 <head>
     <meta charset="utf-8">
     <title>CrimeCast</title>
-    <link rel="stylesheet" type="text/css"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/bs-main-menu.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-    <link href="assets/css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css' />
+    
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            height: 100%;
-        }
+        
     </style>
 
     <!-- Javascript -->
@@ -37,7 +27,7 @@
             <div class="dropdown">
                 <ul class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="true">
-                    Maps
+                    <span class="glyphicon glyphicon-search icon-rotate icon-flipped"></span>ptions
                     <span class="caret"></span>
                 </ul>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -46,8 +36,8 @@
                     <li><a href="#" data-toggle="modal" data-target="#date-time">Date/Time</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#type-crime">Type of Crime</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Graphs</a></li>
-                </ul>
+                    <li><a onclick="$('.card').toggleClass('flipped');">Graphs</a></li>
+               </ul>
             </div>
         </ul>
         <div class="navbar-header">
@@ -58,13 +48,17 @@
 <!--NavBar End-->
 
 <!--Map Div-->
-<!--<div class="map-wrapper">-->
-<div id="map"></div>
-<!--</div>-->
+	<div class="">
+		<div id="map"></div>
+		<div class="card-container">
+			<div class="card card-block">
+  				<h4 class="">Crimes</h4>
+		    	
+			</div>
+		</div>	
+	</div>
 
-<!--<h1>Hello World</h1>-->
 <script src="js/map.js"></script>
-<!--<img src="assets/img/indy.jpg" alt="Image Placeholder" height=100% width=100% />-->
 <!--End Map Div-->
 
 <!--&lt;!&ndash; Modal for County&ndash;&gt;-->

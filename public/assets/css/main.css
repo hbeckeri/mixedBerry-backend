@@ -1,13 +1,86 @@
-body {
+html, body {
     font-family: 'Josefin Sans', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 #map {
-    height: 100px;
-    width: 100px;
-    background-color: red;
+    height: 93%;
 }
 .map-wrapper {
     background-color: red;
     height: 100%;
     width: 100%;
+}
+.icon-flipped {
+transform: scaleX(-1);
+-moz-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+-ms-transform: scaleX(-1);
+}
+/**********
+Card Flipper
+**********/
+
+/*********
+Bootstrap custom css below
+*********/
+
+.navbar {
+    background-color: #3943A2;   
+    color: #fff;
+    border: 0px solid;
+    border-radius: 0px;
+    padding-top: 7px;
+    font-size: 23px;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+.dropdown-toggle:hover { 
+    color: #ff8e36;
+}
+.dropdown-menu {
+    margin-top: 11px;
+    margin-left:-15px;
+    border-radius: 0;
+}
+.modal-content {
+    border-radius: 0px;
+}
+.modal-dialog {
+    margin-top: 100px;    
+}
+.modal-header {
+    background-color: #3943A2;   
+    color: #fff;
+    border: 0px;
+}
+.modal-footer {
+    border-top: 0px; 
+}
+
+/********
+Bootstrap Card
+*********/
+
+.card-container {
+    position: absolute;
+    width:600px;
+    height:75px;
+    top: 85%;
+    left: 32%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 0px;
+    box-shadow: 5px 5px 5px #888;
 }
