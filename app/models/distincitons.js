@@ -24,4 +24,4 @@ var Distinctions = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('distinctions', Distinctions);
+module.exports = mongoose.model('asdf', Distinctions);
