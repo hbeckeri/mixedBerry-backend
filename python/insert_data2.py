@@ -36,7 +36,8 @@ for row in range(sh1.nrows):
         "latitude2": sh1.cell(rowx=row, colx=3).value,
         "longitude2": sh1.cell(rowx=row, colx=4).value
     }
-    collection.insert(data)
+    #collection.insert(data)
+    print(data)
 
 client2.close()
 

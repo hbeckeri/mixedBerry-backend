@@ -1,20 +1,7 @@
-var heatmapData = [
-  new google.maps.LatLng(37.782, -122.447),
-  new google.maps.LatLng(37.782, -122.445),
-  new google.maps.LatLng(37.782, -122.443),
-  new google.maps.LatLng(37.782, -122.441),
-  new google.maps.LatLng(37.782, -122.439),
-  new google.maps.LatLng(37.782, -122.437),
-  new google.maps.LatLng(37.782, -122.435),
-  new google.maps.LatLng(37.785, -122.447),
-  new google.maps.LatLng(37.785, -122.445),
-  new google.maps.LatLng(37.785, -122.443),
-  new google.maps.LatLng(37.785, -122.441),
-  new google.maps.LatLng(37.785, -122.439),
-  new google.maps.LatLng(37.785, -122.437),
-  new google.maps.LatLng(37.785, -122.435)
-];
-
+var heatmapData;
+$.get('https://ec2-52-35-101-218.us-west-2.compute.amazonaws.com/ambulance', function(res) {
+	heatmapData = res;	
+		});
 var sanFrancisco = new google.maps.LatLng(39.7684 ,-86.1581);
 
 map = new google.maps.Map(document.getElementById('map'), {
