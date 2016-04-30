@@ -9,6 +9,7 @@ $.get('http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com/distinction', fu
     var array = [];
 
     for(var i = 0; i < doc.length; i++) {
+        console.log(doc[i]);
         var rect = new google.maps.Rectangle({
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
