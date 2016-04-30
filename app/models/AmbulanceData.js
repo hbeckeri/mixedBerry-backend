@@ -15,11 +15,11 @@ var AmbulanceData = new mongoose.Schema({
 		required: true
 	},
 	latitude: { 
-		type: Double, 
+		type: Number, 
 		required: true
 	},	
 	longitude: { 
-		type: Double, 
+		type: Number, 
 		required: true
 	}
 });
