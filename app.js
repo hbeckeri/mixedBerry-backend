@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
-//var meth = require('./app/models/methData.js');
+var methData = require('./app/models/methData.js');
 var heatData = require('./app/models/AmbulanceData.js');
 var gridData = require('./app/models/output.js');
 var grid = require('./app/models/distincitons.js');
@@ -41,4 +41,10 @@ app.get('/heat', function(req, res) {
    heatData.find({}, function(err, docs){
        res.send(docs);
    });
+});
+
+app.get('/meth', function(req, res) {
+   methData.find({}, function(err, docs){
+       res.send(docs);
+   })
 });
