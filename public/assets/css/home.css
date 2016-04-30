@@ -1,0 +1,36 @@
+.title h1{
+    left: 0;
+    position:absolute;
+    text-align:center;
+    top: 150px;
+    width: 100%;
+    color: #fff;
+    font-size: 85px;
+
+}
+.cover-img {
+    position:relative;
+    margin-top:-50px;
+    height:100%;
+    width:100%;
+    opacity: 0.6;
+}
+.discription {
+    left: 0;
+    position:absolute;
+    text-align:center;
+    bottom: -100px;
+    width: 100%;
+    color: #fff;
+    font-size:35px ;
+    background-color: #3943A2;
+}
+.enter-button {
+    left: 0;
+    position:absolute;
+    text-align:center;
+    bottom: -150px;
+    width: 100%;
+    color: #fff;
+    font-size: ;
+}

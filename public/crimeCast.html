@@ -1,0 +1,227 @@
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>CrimeCast</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css' />
+
+    <!-- Javascript -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnl-WeXumUOh_y4SCZtNNgYEmvsOrhGW8&libraries=visualization"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+<!--NavBar Start-->
+<div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <div class="dropdown">
+                <ul class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    <span class="glyphicon glyphicon-search icon-rotate icon-flipped"></span>ptions
+                    <span class="caret"></span>
+                </ul>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a onclick="setGrid(1)">Crime Types</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a onclick="setHeatmap()">911 Calls</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a onclick="setMethPins()">Meth Labs</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a onclick="setGridByPrediction(1)">5 Day CrimeCast</a></li>
+                    <!--<li role="separator" class="divider"></li>-->
+                    <!--<li><a href="#">Graphs</a></li>-->
+                </ul>
+            </div>
+        </ul>
+        <div class="navbar-header">
+            <ul class="modelTitle">CrimeCast</ul>
+        </div>
+    </div>
+</div>
+<!--NavBar End-->
+
+<!--Map Div-->
+<div class="">
+    <div id="map"></div>
+    <div id="chart"></div>
+    <div id="crimeTypes" class="card-container">
+        <div class="card card-block">
+            <div class="row">
+                <div class="col col-sm-1"></div>
+                <div onclick="setGrid(1)" class="col col-sm-2 cardLink">Type 1</div>
+                <div onclick="setGrid(2)" class="col col-sm-2 cardLink">Type 2</div>
+                <div onclick="setGrid(3)" class="col col-sm-2 cardLink">Type 3</div>
+                <div onclick="setGrid(4)" class="col col-sm-2 cardLink">Type 4</div>
+                <div onclick="setGrid(5)" class="col col-sm-2 cardLink">Type 5</div>
+            </div>
+        </div>
+    </div>
+    <div id="crimeCast" class="card-container">
+        <div class="card card-block">
+            <div class="col col-sm-1"></div>
+            <div onclick="setGridByPrediction(1)" class="col col-sm-2 cardLink">Day 1</div>
+            <div onclick="setGridByPrediction(2)" class="col col-sm-2 cardLink">Day 2</div>
+            <div onclick="setGridByPrediction(3)" class="col col-sm-2 cardLink">Day 3</div>
+            <div onclick="setGridByPrediction(4)" class="col col-sm-2 cardLink">Day 4</div>
+            <div onclick="setGridByPrediction(5)" class="col col-sm-2 cardLink">Day 5</div>
+        </div>
+    </div>
+    <div id="crimeCastTypes" class="card-container-vertical">
+        <div class="card card-block">
+            <div class="cardLink-spacer"></div>
+            <div onclick="setGridByPredictionType(1)" class="cardLink-vertical">Type 1</div>
+            <div onclick="setGridByPredictionType(2)" class="cardLink-vertical">Type 2</div>
+            <div onclick="setGridByPredictionType(3)" class="cardLink-vertical">Type 3</div>
+            <div onclick="setGridByPredictionType(4)" class="cardLink-vertical">Type 4</div>
+            <div onclick="setGridByPredictionType(5)" class="cardLink-vertical">Type 5</div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--</div>-->
+
+<!--<h1>Hello World</h1>-->
+<!--<img src="assets/img/indy.jpg" alt="Image Placeholder" height=100% width=100% />-->
+<!--End Map Div-->
+
+<!--&lt;!&ndash; Modal for County&ndash;&gt;-->
+<div class="modal fade" id="county" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal Content for County-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Crimes</h4>
+            </div>
+            <div class="modal-body">
+                <form id="gridSelector">
+                    <input type="radio" name="radioName" value="1"/> Type 1 <br/>
+                    <input type="radio" name="radioName" value="2"/> Type 2 <br/>
+                    <input type="radio" name="radioName" value="3"/> Type 3 <br/>
+                    <input type="radio" name="radioName" value="4"/> Type 4 <br/>
+                    <input type="radio" name="radioName" value="5"/> Type 5 <br/>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="setGrid()">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--&lt;!&ndash;End of Modal&ndash;&gt;-->
+<!-- -->
+<!--&lt;!&ndash; Modal for City&ndash;&gt;-->
+<div class="modal fade" id="city" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal Content for City-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">City</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <input type="text" name="city" value="Please enter city"/>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- -->
+    </div>
+</div>
+<!--&lt;!&ndash;End of Modal&ndash;&gt;-->
+<!-- -->
+<!--&lt;!&ndash; Modal for Date/Time&ndash;&gt;-->
+<div class="modal fade" id="date-time" role="dialog">
+    <div class="modal-dialog">
+        <!-- -->
+        <!--&lt;!&ndash; Modal Content for City&ndash;&gt;-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Date/Time</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <input type="text" name="city" value="Please enter city"/>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- -->
+    </div>
+</div>
+<!--&lt;!&ndash;End of Modal&ndash;&gt;-->
+<!-- -->
+<!--&lt;!&ndash; Modal for Type of Crime&ndash;&gt;-->
+<div class="modal fade" id="type-crime" role="dialog">
+    <div class="modal-dialog">
+        <!-- -->
+        <!--&lt;!&ndash; Modal Content for City&ndash;&gt;-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Type of Crime</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <input type="text" name="city" value="Please enter city"/>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Modal-->
+</body>
+
+<script src="js/map.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    var marker = null;
+    socket.on('hi', function (data) {
+		var x = +data.data;
+		if(x < 100 && x >= 0) {
+            if (marker == null) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(39.967354, -86.0103986),
+                    map: map
+                });
+            }
+		} else {
+            marker.setMap(null);
+            marker = null;
+        }
+    });
+</script>
+<script src="js/RadarChart.js"></script>
+
+</html>
