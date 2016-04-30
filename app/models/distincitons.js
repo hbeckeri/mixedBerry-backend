@@ -24,4 +24,4 @@ var Distinctions = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('distinction', Distinctions);
+module.exports = mongoose.model('distinctions', Distinctions);
