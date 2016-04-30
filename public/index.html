@@ -204,12 +204,14 @@
     socket.on('hi', function (data) {
 		var x = +data.data;
 		if(x < 100 && x >= 0) {
+            console.log('add');
 			marker = new google.maps.Marker({
 				position: new google.maps.LatLng(39.967354, -86.0103986),
 				map: map
 			});
 			console.log(data);
 		} else {
+            console.log('remove');
             marker.setMap(null);
         }
     });
