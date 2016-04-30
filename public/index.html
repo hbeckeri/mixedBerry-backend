@@ -41,7 +41,7 @@
                     <span class="caret"></span>
                 </ul>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#" data-toggle="modal" data-target="#county">County</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#county">Crime Types</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#city">City</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#date-time">Date/Time</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#type-crime">Type of Crime</a></li>
@@ -51,7 +51,7 @@
             </div>
         </ul>
         <div class="navbar-header">
-            <ul class="">CrimeCast</ul>
+            <ul class="modelTitle">CrimeCast</ul>
         </div>
     </div>
 </div>
@@ -63,7 +63,6 @@
 <!--</div>-->
 
 <!--<h1>Hello World</h1>-->
-<script src="js/map.js"></script>
 <!--<img src="assets/img/indy.jpg" alt="Image Placeholder" height=100% width=100% />-->
 <!--End Map Div-->
 
@@ -75,18 +74,20 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">County</h4>
+                <h4 class="modal-title text-center">Crimes</h4>
             </div>
             <div class="modal-body">
-                <form action="">
-                    <input type="radio" name="county1" value="county1"> County 1<br>
-                    <input type="radio" name="county2" value="county2"> County 2<br>
-                    <input type="radio" name="county3" value="county3" checked> County 3
+                <form id="gridSelector">
+                    <input type="radio" name="radioName" value="1" /> Type 1 <br/>
+                    <input type="radio" name="radioName" value="2" /> Type 2 <br/>
+                    <input type="radio" name="radioName" value="3" /> Type 3 <br/>
+                    <input type="radio" name="radioName" value="2" /> Type 4 <br/>
+                    <input type="radio" name="radioName" value="3" /> Type 5 <br/>
                 </form>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="setGrid()">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -172,4 +173,8 @@
 </div>
 <!--End of Modal-->
 </body>
+
+<script src="js/map.js"></script>
+
+
 </html>
