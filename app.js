@@ -34,6 +34,8 @@ app.get('/ambulance', function (req, res) {
 app.get('/distinction', function(req, res){
     distinction.find({}, function (err, docs) {
         console.log(err);
+        console.log("here");
         res.send(docs);
+        console.log("and here");
     });
 });
