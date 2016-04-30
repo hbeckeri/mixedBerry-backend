@@ -1,12 +1,16 @@
 var heatmapData = [];
 var grid;
 var gridData;
+var crimeCastType = 1;
+var crimeCastDay = 1;
 
 var crimeCast = $('#crimeCast');
 var crimeTypes = $('#crimeTypes');
+var crimeCastTypes = $('#crimeCastTypes');
 
 crimeCast.fadeOut(0);
 crimeTypes.fadeOut(0);
+crimeCastTypes.fadeOut(0);
 
 console.log('here');
 
@@ -59,6 +63,7 @@ function numberToColor(num) {
 }
 
 function setGrid(val) {
+    crimeCastTypes.fadeOut(0);
     crimeCast.fadeOut(0);
     crimeTypes.fadeIn(0);
     $('.modelTitle').text('Crime Reports: Type ' + val);
@@ -91,6 +96,7 @@ function setGrid(val) {
 }
 
 function setHeatmap() {
+    crimeCastTypes.fadeOut(0);
     crimeCast.fadeOut(0);
     crimeTypes.fadeOut(0);
 
@@ -110,6 +116,7 @@ function setHeatmap() {
 }
 
 function setMethPins() {
+    crimeCastTypes.fadeOut(0);
     crimeCast.fadeOut(0);
     crimeTypes.fadeOut(0);
 
@@ -137,10 +144,13 @@ function setMethPins() {
 }
 
 function setGridByPrediction(day) {
+    crimeCastDay = day;
+
+    crimeCastTypes.fadeIn(0);
     crimeCast.fadeIn(0);
     crimeTypes.fadeOut(0);
 
-    $('.modelTitle').text('5 Day Crime Forcast: Day '+ day);
+    $('.modelTitle').text('Crime Forcast - Day: '+ crimeCastDay + ' Type: ' + crimeCastType);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: sanFrancisco,
@@ -151,7 +161,46 @@ function setGridByPrediction(day) {
     for (var i =1; i < grid.length; i++) {
 
         (function(index) {
-            $.get('http://54.200.107.111:8007/iot_data/' + i + '/' + day , function(doc) {
+            $.get('http://54.200.107.111:8007/iot_data/' + i + '/' + crimeCastDay , function(doc) {
+                var rect = new google.maps.Rectangle({
+                    strokeColor: numberToColor(doc),
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: numberToColor(doc),
+                    fillOpacity: 0.35,
+                    map: map,
+                    bounds: {
+                        north: grid[index].latitude1,
+                        south: grid[index].latitude2,
+                        east: grid[index].longitude1,
+                        west: grid[index].longitude2
+                    }
+                });
+            });
+        })(i)
+
+    }
+}
+
+function setGridByPredictionType(type) {
+    crimeCastType = type;
+
+    crimeCastTypes.fadeIn(0);
+    crimeCast.fadeIn(0);
+    crimeTypes.fadeOut(0);
+
+    $('.modelTitle').text('Crime Forcast - Day: '+ crimeCastDay + ' Type: ' + crimeCastType);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: sanFrancisco,
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    for (var i =1; i < grid.length; i++) {
+
+        (function(index) {
+            $.get('http://54.200.107.111:8007/iot_data/' + i + '/' + crimeCastDay + '/' + crimeCastType , function(doc) {
                 var rect = new google.maps.Rectangle({
                     strokeColor: numberToColor(doc),
                     strokeOpacity: 0.8,

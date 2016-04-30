@@ -68,6 +68,16 @@
             <div onclick="setGridByPrediction(5)" class="col col-sm-2 cardLink">Day 5</div>
         </div>
     </div>
+    <div id="crimeCastTypes" class="card-container-vertical">
+        <div class="card card-block">
+            <div class="cardLink-spacer"></div>
+            <div onclick="setGridByPredictionType(1)" class="cardLink-vertical">Type 1</div>
+            <div onclick="setGridByPredictionType(2)" class="cardLink-vertical">Type 2</div>
+            <div onclick="setGridByPredictionType(3)" class="cardLink-vertical">Type 3</div>
+            <div onclick="setGridByPredictionType(4)" class="cardLink-vertical">Type 4</div>
+            <div onclick="setGridByPredictionType(5)" class="cardLink-vertical">Type 5</div>
+        </div>
+    </div>
 
 </div>
 
@@ -192,7 +202,7 @@
     var socket = io();
     socket.on('hi', function (data) {
 		var x = +data.data;
-		if(x < 100 && x > 0) {
+		if(x < 100 && x >= 0) {
 			new google.maps.Marker({
 				position: new google.maps.LatLng(39.967354, -86.0103986),
 				map: map

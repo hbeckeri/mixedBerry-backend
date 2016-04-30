@@ -85,8 +85,35 @@ Bootstrap Card
     box-shadow: 5px 5px 5px #888;
 }
 
+.card-container-vertical {
+    position: absolute;
+    width:75px;
+    height: 600px;
+    top: 10%;
+    right: 3%;
+    z-index: 6;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 0px;
+    box-shadow: 5px 5px 5px #888;
+}
+
 .cardLink{
     height: 100%;
     box-shadow: 5px 5px 5px #888;
+}
+.cardLink-vertical {
+    height: 16%;
+    box-shadow: 5px 5px 5px #888;
+    /*text-align: center;*/
+    vertical-align: text-bottom;
+}
+
+.cardLink-spacer {
+    height: 10%;
 }
 
