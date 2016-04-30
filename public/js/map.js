@@ -13,6 +13,7 @@ $.get(url + '/grid', function (doc) {
         gridData = docData;
     });
 });
+
 var sanFrancisco = new google.maps.LatLng(39.7684, -86.1581);
 
 var map = new google.maps.Map(document.getElementById('map'), {
@@ -44,7 +45,6 @@ function numberToColor(num) {
             return '#b30000';
         case 8:
             return '#7f0000';
-
     }
 }
 
@@ -77,6 +77,16 @@ function setGrid() {
             }
         });
     }
+}
+
+function setHeatmap() {
+    $('.modelTitle').text('911 Call Heatmap');
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: sanFrancisco,
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 }
 
 
