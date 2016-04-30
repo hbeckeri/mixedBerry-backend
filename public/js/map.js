@@ -12,7 +12,7 @@ $.get(url + '/grid', function (doc) {
         gridData = docData;
         $.get(url + '/heat', function(heat) {
             for(var i = 1; i < doc.length; i++) {
-                heatmapData.push(new google.maps.LatLng(heat[i]["latitude"], heat[i]["longitude"]));
+                heatmapData.push(new google.maps.LatLng(heat[i].latitude, heat[i]["longitude"]));
             }
         });
     });
@@ -110,8 +110,18 @@ function setMethPins() {
 
     //write ur shit here
     //if you need more data, make another nested get request; alternatively, you could make the get request here
+	var marker;
+	$.get(url + '/meth', function(doc) {
+		console.log(doc);
+		for(var i = 1; i < doc.length ; i++) {
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(doc[i]["latitude"], doc[i]["longitude"]),
+				title: doc[i]["address"],
+				map: map
+			});
+		}
+	});
 }
-
 
 function setGridByPrediction(day) {
     $('.modelTitle').text('5 Day Crime Forcast');
@@ -145,6 +155,4 @@ function setGridByPrediction(day) {
 
     }
 }
-
-
 
