@@ -139,6 +139,39 @@ function setMethPins() {
 				title: doc[i]["address"],
 				map: map
 			});
+            google.maps.event.addListener(marker, 'click', function() {
+                            
+                            var w = 200,
+                                h = 250,
+                                array  = [],
+                                i = 0,
+                                d,
+                                mycfg;
+
+                            for (i = 0; i<9; i++) {
+                                array[i] = Math.random();
+                            }
+                            d = [
+                                [
+                                    {axis:"Open hours",value:array[0]},
+                                    {axis:"Availability",value:array[1]},
+                                    {axis:"Distance",value:array[3]},
+                                    {axis:"Potential risk",value:array[5]},
+                                    {axis:"Other",value:array[7]},
+                                    {axis:"service",value:array[8]}
+                                ]
+                            ];
+
+                            mycfg = {
+                              w: w,
+                              h: h,
+                              maxValue: 0.6,
+                              levels: 6,
+                              ExtraWidthX: 200
+                            }
+
+                            RadarChart.draw("#chart", d, mycfg);
+                        });
 		}
 	});
 }
