@@ -14,6 +14,8 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnl-WeXumUOh_y4SCZtNNgYEmvsOrhGW8&libraries=visualization"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 </head>
 <body>
 <!--NavBar Start-->
@@ -28,11 +30,14 @@
                 </ul>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li><a onclick="setGrid(1)">Crime Types</a></li>
-                    <li><a onclick="setHeatmap()">911 Calls</a></li>
-                    <li><a onclick="setMethPins()">Meth Labs</a></li>
-                    <li><a onclick="setGridByPrediction(1)">5 Day CrimeCast</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Graphs</a></li>
+                    <li><a onclick="setHeatmap()">911 Calls</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a onclick="setMethPins()">Meth Labs</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a onclick="setGridByPrediction(1)">5 Day CrimeCast</a></li>
+                    <!--<li role="separator" class="divider"></li>-->
+                    <!--<li><a href="#">Graphs</a></li>-->
                 </ul>
             </div>
         </ul>
@@ -46,6 +51,7 @@
 <!--Map Div-->
 <div class="">
     <div id="map"></div>
+    <div id="chart"></div>
     <div id="crimeTypes" class="card-container">
         <div class="card card-block">
             <div class="row">
@@ -216,5 +222,6 @@
         }
     });
 </script>
+<script src="js/RadarChart.js"></script>
 
 </html>
