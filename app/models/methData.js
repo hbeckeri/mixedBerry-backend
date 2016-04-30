@@ -23,11 +23,11 @@ var methData = new mongoose.Schema({
 		required: true
 	},
 	latitude: { 
-		type: Double, 
+		type: "double", 
 		required: true
 	},	
 	longitude: { 
-		type: Double, 
+		type: "double", 
 		required: true
 	}
 });
