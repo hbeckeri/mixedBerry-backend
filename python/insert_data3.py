@@ -21,7 +21,7 @@ class Client:
         self.client.close()
 
 client2 = Client("localhost", 27017, "iot")
-collection = client2.connectDB('AmbulanceData')
+collection = client2.connectDB('ambulancedatas')
 
 
 #911_tesambulance.xls
