@@ -24,4 +24,4 @@ var Dist = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('grids', Dist);
+module.exports = mongoose.model('distinctions', Dist);
