@@ -13,24 +13,34 @@
     margin-top:-50px;
     height:100%;
     width:100%;
-    opacity: 0.6;
+    /*opacity: ;*/
 }
-.discription {
-    left: 0;
+
+.desc-text {
+    left: 10%;
     position:absolute;
-    text-align:center;
-    bottom: -100px;
-    width: 100%;
-    color: #fff;
+    top: 90%;
+    width: 80%;
+    color: #ff8e36;
     font-size:35px ;
+    text-align:center;
     background-color: #3943A2;
+    /*opacity: ;*/
 }
 .enter-button {
-    left: 0;
+    left: 25%;
     position:absolute;
     text-align:center;
-    bottom: -150px;
-    width: 100%;
+    top: 45%;
+    width: 50%;
     color: #fff;
-    font-size: ;
+    padding: 10px 0px 10px 0px;
+    font-size: 18px;
+    color:#ff8e36;
+    background-color: #3943A2;
+    border:0px;
+}
+.enter-button:hover {
+    background-color:#ff8e36;
+    color:#3943A2;
 }
