@@ -6,6 +6,12 @@
     padding-top: 7px;
     font-size: 23px;
 }
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar.center .navbar-inner {
+    text-align: center;
+}
 .dropdown-toggle:hover { 
     color: #ff8e36;
 }
@@ -17,7 +23,14 @@
 .modal-content {
     border-radius: 0px;
 }
-.modal-header{
+.modal-dialog {
+    margin-top: 100px;    
+}
+.modal-header {
     background-color: #3943A2;   
     color: #fff;
+    border: 0px;
+}
+.modal-footer {
+    border-top: 0px; 
 }
