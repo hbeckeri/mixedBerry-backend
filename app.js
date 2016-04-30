@@ -5,6 +5,11 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
+var meth = require('/app/models/methData.js');
+var ambulance = require('/app/models/AmbulanceData.js');
+var output = require('/app/models/output.js');
+var distinction = require('/app/models/distinctions.js');
+
 mongoose.connect('mongodb://localhost/database');
 
 var PORT = 80;
@@ -19,6 +24,5 @@ app.get('/', function(req, res) {
 });
 
 app.get('/data', function(req, res){
-    //query mongo
-    //return data
+
 });
