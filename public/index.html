@@ -200,15 +200,18 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
     var socket = io();
+    var marker;
     socket.on('hi', function (data) {
 		var x = +data.data;
 		if(x < 100 && x >= 0) {
-			new google.maps.Marker({
+			marker = new google.maps.Marker({
 				position: new google.maps.LatLng(39.967354, -86.0103986),
 				map: map
 			});
 			console.log(data);
-		}
+		} else {
+            marker.setMap(null);
+        }
     });
 </script>
 
