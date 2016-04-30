@@ -21,11 +21,11 @@ class Client:
         self.client.close()
 
 client2 = Client("localhost", 27017, "iot")
-collection = client2.connectDB("distinction")
+collection = client2.connectDB("distinction2")
 
 
 #output.xls
-book1 = xlrd.open_workbook('distinction.xlsx')
+book1 = xlrd.open_workbook('distinction2.xlsx')
 sh1 = book1.sheet_by_index(0)
 for row in range(sh1.nrows):
     #print 1
