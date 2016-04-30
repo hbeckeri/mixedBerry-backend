@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 //var meth = require('./app/models/methData.js');
 var heatData = require('./app/models/AmbulanceData.js');
 var gridData = require('./app/models/output.js');
-var distinction = require('./app/models/distincitons.js');
+var grid = require('./app/models/distincitons.js');
 
 mongoose.connect('mongodb://localhost/iot');
 
@@ -25,14 +25,20 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
 
-app.get('/ambulance', function (req, res) {
+app.get('/gridData', function (req, res) {
     gridData.find({}, function (err, docs) {
         res.send(docs);
     });
 });
 
-app.get('/distinction', function(req, res){
-    distinction.find({}, function (err, docs) {
+app.get('/grid', function(req, res){
+    grid.find({}, function (err, docs) {
         res.send(docs);
     });
+});
+
+app.get('/heat', function(req, res) {
+   heatData.find({}, function(err, docs){
+       res.send(docs);
+   });
 });

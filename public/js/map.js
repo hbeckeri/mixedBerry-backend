@@ -2,8 +2,11 @@ var heatmapData;
 
 console.log('here');
 
+var url = 'http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com';
 
-$.get('http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com/distinction', function (doc) {
+$.get(url + '/distinction', function (doc) {
+    $.get(url + '/')
+
     heatmapData = doc;
     var array = [];
 
