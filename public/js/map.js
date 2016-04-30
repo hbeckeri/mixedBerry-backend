@@ -15,7 +15,7 @@ $.get(url + '/grid', function (doc) {
             var rect = new google.maps.Rectangle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.8,
-                strokeWeight: 2,
+                strokeWeight: dataDoc[5*i].number,
                 fillColor: '#FF0000',
                 fillOpacity: 0.35,
                 map: map,
