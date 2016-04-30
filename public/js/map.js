@@ -10,6 +10,7 @@ $.get(url + '/grid', function (doc) {
         var array = [];
 
         for(var i = 0; i < doc.length; i++) {
+            console.log(dataDoc[i]);
             console.log(doc[i]);
             var rect = new google.maps.Rectangle({
                 strokeColor: '#FF0000',
