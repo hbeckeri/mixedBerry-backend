@@ -1,8 +1,14 @@
 /**
  * Created by hbeckeri on 12/9/15.
  */
+
+var PORT = 80;
+
 var express = require('express');
 var app = express();
+var io = require('socket.io').listen(app.listen(PORT, function () {
+    console.log('MixedBerry Server: Listening on port %s', PORT);
+}));
 var mongoose = require('mongoose');
 
 var methData = require('./app/models/methData.js');
@@ -14,12 +20,9 @@ mongoose.connect('mongodb://localhost/iot');
 
 //var versions = mongoose.model("versions");
 
-var PORT = 80;
 app.use(express.static(__dirname + '/public'));
 
-app.listen(PORT, function () {
-    console.log('MixedBerry Server: Listening on port %s', PORT);
-});
+
 
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
@@ -47,4 +50,10 @@ app.get('/meth', function(req, res) {
    methData.find({}, function(err, docs){
        res.send(docs);
    })
+});
+
+app.get('/light', function(req, res){
+    var data = req.query.data;
+    io.emit('hi', {data: data}, 'everyone');
+    res.send('OK');
 });
