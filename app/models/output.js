@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 
 var Output = new mongoose.Schema({
 	index: {
-		type: "int",
+		type: Number,
 		required: true
 	},
 	distinction: {
-		type: "int",
+		type: Number,
 		required: true
 	},
 	type: {
@@ -15,7 +15,7 @@ var Output = new mongoose.Schema({
 		required: true
 	},
 	number: { 
-		type: "double", 
+		type: Number, 
 		required: true
 	}	
 });
