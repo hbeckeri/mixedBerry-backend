@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
 
-app.get('/distinction', function (req, res) {
+app.get('/ambulance', function (req, res) {
     ambulance.find({}, function (err, docs) {
         res.send(docs);
     });
