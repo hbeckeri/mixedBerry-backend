@@ -4,29 +4,29 @@ console.log('here');
 
 var url = 'http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com';
 
-$.get(url + '/distinction', function (doc) {
-    $.get(url + '/')
+$.get(url + '/grid', function (doc) {
+    $.get(url + '/gridData', function(doc){
+        heatmapData = doc;
+        var array = [];
 
-    heatmapData = doc;
-    var array = [];
-
-    for(var i = 0; i < doc.length; i++) {
-        console.log(doc[i]);
-        var rect = new google.maps.Rectangle({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
-            map: map,
-            bounds: {
-                north: doc[i].latitude1,
-                south: doc[i].latitude2,
-                east: doc[i].longitude1,
-                west: doc[i].longitude2
-            }
-        });
-    }
+        for(var i = 0; i < doc.length; i++) {
+            console.log(doc[i]);
+            var rect = new google.maps.Rectangle({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35,
+                map: map,
+                bounds: {
+                    north: doc[i].latitude1,
+                    south: doc[i].latitude2,
+                    east: doc[i].longitude1,
+                    west: doc[i].longitude2
+                }
+            });
+        }
+    });
 });
 var sanFrancisco = new google.maps.LatLng(39.7684, -86.1581);
 
