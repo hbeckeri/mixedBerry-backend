@@ -22,7 +22,6 @@ var Distinctions = new mongoose.Schema({
 		type: Number,
 		required: true
 	}
-	
 });
 
 module.exports = mongoose.model('distinction', Distinctions);
