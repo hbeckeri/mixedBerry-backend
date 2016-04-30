@@ -7,8 +7,8 @@ var mongoose = require('mongoose');
 
 //var meth = require('./app/models/methData.js');
 //var ambulance = require('./app/models/AmbulanceData.js');
-var output = require('./app/models/output.js');
-//var distinction = require('./app/models/distinctions.js');
+var ambulance = require('./app/models/output.js');
+var distinction = require('./app/models/distinctions.js');
 
 mongoose.connect('mongodb://localhost/iot');
 
@@ -25,8 +25,15 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
 
-app.get('/data', function (req, res) {
-    output.find({}, function (err, docs) {
+app.get('/ambulance', function (req, res) {
+    ambulance.find({}, function (err, docs) {
+        console.log(docs);
+        res.send(docs);
+    });
+});
+
+app.get('/distiction', function(req, res){
+    distinction.find({}, function (err, docs) {
         console.log(docs);
         res.send(docs);
     });
