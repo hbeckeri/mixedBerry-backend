@@ -15,7 +15,7 @@ var Output = new mongoose.Schema({
 		required: true
 	},
 	number: { 
-		type: Double, 
+		type: "double", 
 		required: true
 	}	
 });
