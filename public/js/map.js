@@ -1,4 +1,4 @@
-var heatmapData;
+var heatmapData = [];
 var grid;
 var gridData;
 
@@ -7,10 +7,14 @@ console.log('here');
 var url = 'http://ec2-52-35-101-218.us-west-2.compute.amazonaws.com';
 
 $.get(url + '/grid', function (doc) {
+    grid = doc;
     $.get(url + '/gridData', function(docData){
-        heatmapData = grid;
-        grid = doc;
         gridData = docData;
+        $.get(url + '/heat', function(heat) {
+            for(var i = 1; i < doc.length; i++) {
+                heatmapData.push(new google.maps.LatLng(heat[i]["latitude"], heat[i]["longitude"]));
+            }
+        });
     });
 });
 
@@ -87,6 +91,25 @@ function setHeatmap() {
         zoom: 11,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: heatmapData,
+        radius: 40
+    });
+    heatmap.setMap(map);
+}
+
+function setMethPins() {
+    $('.modelTitle').text('Meth Labs');
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: sanFrancisco,
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    //write ur shit here
+    //if you need more data, make another nested get request; alternatively, you could make the get request here
 }
 
 
