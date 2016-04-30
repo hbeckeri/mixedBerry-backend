@@ -10,7 +10,7 @@ var ambulance = require('/app/models/AmbulanceData.js');
 var output = require('/app/models/output.js');
 var distinction = require('/app/models/distinctions.js');
 
-mongoose.connect('mongodb://localhost/database');
+mongoose.connect('mongodb://localhost/iot');
 
 var PORT = 80;
 app.use(express.static(__dirname + '/public'));
@@ -19,10 +19,13 @@ app.listen(PORT, function () {
     console.log('MixedBerry Server: Listening on port %s', PORT);
 });
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
 
-app.get('/data', function(req, res){
-
+app.get('/data', function (req, res) {
+    output.find({}, function (err, docs) {
+        console.log(docs);
+        res.send(docs);
+    });
 });
